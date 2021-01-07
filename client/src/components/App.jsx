@@ -19,12 +19,11 @@ export default class App extends Component {
   componentDidMount() {
     const randomProductId = Math.floor(Math.random() * 100) + 1;
     API.getProduct(randomProductId)
-      .then((data) => (this.setState({ data })))
+      .then((data) => this.setState({ data }))
       .catch((err) => {
         throw Error(err);
       });
   }
-
 
   handlePrevImg() {
     const { data, currentImgIndx } = this.state;
@@ -34,7 +33,6 @@ export default class App extends Component {
 
     this.setState({ currentImgIndx: index });
   }
-
 
   handleNextImg() {
     const { data, currentImgIndx } = this.state;
@@ -53,31 +51,31 @@ export default class App extends Component {
     const { data, currentImgIndx } = this.state;
     return (
       <>
-        {data.length
-          ? (
-            <S.AppContainer>
-              <S.MainPhoto>
-                <S.SliderContainer>
-                  <Slider
-                    handlePrevImg={this.handlePrevImg}
-                    handleNextImg={this.handleNextImg}
-                    imgURL={data[currentImgIndx].image_url}
-                    data={data}
-                    handleDisplayImage={this.handleDisplayImage}
-                  />
-                </S.SliderContainer>
-              </S.MainPhoto>
-              <S.SideContainer>
-                <SideMenu
-                  data={data}
+        {data.length ? (
+          <S.AppContainer>
+            <S.MainPhoto>
+              <S.SliderContainer>
+                <Slider
                   handlePrevImg={this.handlePrevImg}
                   handleNextImg={this.handleNextImg}
+                  imgURL={data[currentImgIndx].image_url}
+                  data={data}
                   handleDisplayImage={this.handleDisplayImage}
                 />
-              </S.SideContainer>
-            </S.AppContainer>
-          )
-          : <p>loading</p>}
+              </S.SliderContainer>
+            </S.MainPhoto>
+            <S.SideContainer>
+              <SideMenu
+                data={data}
+                handlePrevImg={this.handlePrevImg}
+                handleNextImg={this.handleNextImg}
+                handleDisplayImage={this.handleDisplayImage}
+              />
+            </S.SideContainer>
+          </S.AppContainer>
+        ) : (
+          <p>Error my g</p>
+        )}
       </>
     );
   }
@@ -99,7 +97,6 @@ S.MainPhoto = styled.div`
   grid-row: 1/3;
   display: grid;
   grid-template-rows: 1;
-
 `;
 
 S.SliderContainer = styled.div`

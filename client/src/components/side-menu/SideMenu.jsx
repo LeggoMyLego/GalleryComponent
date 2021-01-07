@@ -38,7 +38,6 @@ export default class SideMenu extends Component {
       top: cordinatesY,
       behavior: 'smooth',
     });
-
     this.setState({ cordinatesY: updatedCordinates });
   }
 
