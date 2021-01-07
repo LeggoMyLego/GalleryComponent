@@ -17,7 +17,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    const randomProductId = Math.floor(Math.random() * 100) + 1;
+    const randomProductId = Math.floor(Math.random() * 7) + 1;
     API.getProduct(randomProductId)
       .then((data) => this.setState({ data }))
       .catch((err) => {
