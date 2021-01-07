@@ -12,7 +12,6 @@ export default class SideMenu extends Component {
     this.state = {
       cordinatesY: 0,
     };
-
     this.imgRef = React.createRef();
     this.handleClickUp = this.handleClickUp.bind(this);
     this.handleClickDown = this.handleClickDown.bind(this);
@@ -20,7 +19,8 @@ export default class SideMenu extends Component {
 
   handleClickUp() {
     const { cordinatesY } = this.state;
-    const updatedCordinates = cordinatesY === 0 ? cordinatesY : cordinatesY - 100;
+    const updatedCordinates =
+      cordinatesY === 0 ? cordinatesY : cordinatesY - 100;
 
     this.imgRef.current.scroll({
       top: cordinatesY,
@@ -47,7 +47,11 @@ export default class SideMenu extends Component {
       <S.ImageContent>
         <S.ImagesItems>
           <TopArrowBtn handleClickUp={this.handleClickUp} />
-          <SideImageList data={data} ref={this.imgRef} handleDisplayImage={handleDisplayImage} />
+          <SideImageList
+            data={data}
+            ref={this.imgRef}
+            handleDisplayImage={handleDisplayImage}
+          />
           <BottomArrowBtn handleClickDown={this.handleClickDown} />
         </S.ImagesItems>
       </S.ImageContent>
@@ -77,4 +81,3 @@ SideMenu.defaultProps = {
   data: [],
   handleDisplayImage: () => {},
 };
-

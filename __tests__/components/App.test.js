@@ -8,7 +8,7 @@ import Slider from '../../client/src/components/slider/Slider';
 
 jest.mock('axios');
 
-describe('Testing App Component', () => {
+describe('Testing App component', () => {
   it('Component renders without crashing', () => {
     const wrapper = shallow(<App />);
 

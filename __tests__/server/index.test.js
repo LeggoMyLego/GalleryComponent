@@ -99,7 +99,7 @@ describe('Testing images GET Request', () => {
     ];
 
     const response = await request.get(
-      `/api/images/${productImage[0].product_id}`,
+      `/api/images/${productImage[0].product_id}`
     );
 
     expect(response.statusCode).toEqual(200);
@@ -109,7 +109,7 @@ describe('Testing images GET Request', () => {
     done();
   });
 
-  it('should respond with a 404 product id does not exist', async (done) => {
+  it('should respond with a 404 productId does not exist', async (done) => {
     const response = await request.get('/api/images/null');
     expect(response.statusCode).toEqual(404);
     done();

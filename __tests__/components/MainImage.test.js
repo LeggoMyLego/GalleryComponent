@@ -5,7 +5,7 @@ import MainImage from '../../client/src/components/slider/MainImage';
 describe('<MainImage />', () => {
   const data = 'https://legogallery.s3-us-west-1.amazonaws.com/2.jpg';
 
-  it('Component is defined ', () => {
+  it('Component is defined and mounted', () => {
     const wrapper = shallow(<MainImage data={data} />);
     wrapper.setProps({ data });
     expect(wrapper).toBeDefined();

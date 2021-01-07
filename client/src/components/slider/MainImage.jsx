@@ -15,9 +15,7 @@ export default class MainImage extends Component {
   }
 
   handleZoomEffect(e) {
-    const {
-      left, top, width, height,
-    } = e.target.getBoundingClientRect();
+    const { left, top, width, height } = e.target.getBoundingClientRect();
     const x = ((e.pageX - left) / width) * 100;
     const y = ((e.pageY - top) / height) * 100;
 
@@ -50,11 +48,11 @@ export default class MainImage extends Component {
             onClick={this.handleClickImage}
             onMouseLeave={this.handleClickImage}
           >
-            <img src={imgURL} alt="" />
+            <img src={imgURL} alt='' />
           </S.AfterEffectImgContainer>
         ) : (
           <S.BeforeEffectImgContainer onClick={this.handleClickImage}>
-            <img src={imgURL} alt="" />
+            <img src={imgURL} alt='' />
           </S.BeforeEffectImgContainer>
         )}
       </div>
@@ -63,11 +61,9 @@ export default class MainImage extends Component {
 }
 
 const S = {};
-
 S.BeforeEffectImgContainer = styled.div`
   overflow: hidden;
   cursor: zoom-in;
-
   img {
     transition: opacity 0.8s;
     display: block;

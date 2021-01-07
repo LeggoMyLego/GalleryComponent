@@ -1,10 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-
-import FullScreenBtn from "../slider/FullScreenBtn";
-import SideMenu from "../side-menu/SideMenu";
-import MainImage from "../slider/MainImage";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import FullScreenBtn from '../slider/FullScreenBtn';
+import SideMenu from '../side-menu/SideMenu';
+import MainImage from '../slider/MainImage';
 
 const Modal = ({
   imgURL,
@@ -38,7 +37,6 @@ const Modal = ({
 };
 
 const S = {};
-
 S.BackgroundContainer = styled.div`
   position: fixed;
   top: 0;
@@ -82,7 +80,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  imgURL: "",
+  imgURL: '',
   handleToggleScreen: () => {},
   isOpen: false,
   data: [],

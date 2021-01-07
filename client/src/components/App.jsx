@@ -91,20 +91,17 @@ S.AppContainer = styled.div`
   margin: 10px;
   padding: 10px;
 `;
-
 S.MainPhoto = styled.div`
   grid-column: 2/3;
   grid-row: 1/3;
   display: grid;
   grid-template-rows: 1;
 `;
-
 S.SliderContainer = styled.div`
   grid-column: 1/3;
   grid-row: 1/3;
   margin: 20px;
 `;
-
 S.SideContainer = styled.div`
   grid-column: 1/2;
   grid-row: 1/3;
